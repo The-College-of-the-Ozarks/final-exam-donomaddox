@@ -3,7 +3,7 @@ Coordinator Class:
 There are no issues with this class. 
 
 Documentation:
-
+Sets the pay rate and title for Coordinator objects
 @param
 @return
 

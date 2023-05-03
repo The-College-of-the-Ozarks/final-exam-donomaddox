@@ -4,12 +4,12 @@ This class contains multiple typos and needs debugged. There are no logical issu
 besides the aforementioned typos.
 
 Documentation:
-
+This class sets the constructors for the Employee class and contains methods to set and get values and to check if the event is considered a large event
 @param
 @return
 
 */
-class event
+class Event
 {
    public final static double HIGH_GUEST_PRICE = 35.00;
    public final static double LOW_GUEST_PRICE = 32.00;  
@@ -23,11 +23,11 @@ class event
    private double priceForEvent;
    private String contactPhone;
    private int eventType;
-   public Event()
-   {
-      This("A000", 0);
-   } 
-   public Event(String num, int guests)
+   //public void Event()
+   //{
+   //   This("A000", 0);
+   //} 
+   Event(String num, int guests)
    {
       setEventNumber(num);
       setGuests(guests);
@@ -89,8 +89,9 @@ class event
          if(Character.isDigit(phone.charAt(x)))
             contactPhone += phone.charAt(x);
       
-      if(contactPhone.length() != VALID_LEN)
+      if(len != VALID_LEN)
          contactPhone = INVALID_PHONE;
+      }
    }
    public void setEventType(int code)
    {
@@ -115,4 +116,4 @@ class event
       return isLarge;
    }
    }
-}
+

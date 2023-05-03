@@ -3,7 +3,7 @@ DinnerEvent Class:
 There are no issues with this class.
 
 Documentation:
-
+This Class defines the parameters of a Dinner Event, setting the menu choices, and getting and setting the employees for the event.
 @param
 @return
 

@@ -8,13 +8,13 @@ so that the user is continuously prompted until they enter the numbers (ints).
 
 
 Documentation:
-
+The class prompts the user for the event info such as, guest count, menu choices and employee information.
 @param
 @return
 
 
 */
-import java.util.Scanner;
+import java.util.*;
 public class StaffDinnerEvent
 {
    public static void main(String[] args)
@@ -29,7 +29,7 @@ public class StaffDinnerEvent
       int y;
       int waitStaff;
       int chefs;
-      int[] menuOption = new int[3];
+      int[] menuOption = new int[4];
       eventNum = getEventNumber();
       guests = getGuests();
       for(y = 0; y < menuOption.length; ++y)
@@ -37,11 +37,11 @@ public class StaffDinnerEvent
       event = new DinnerEvent(eventNum, guests, menuOption[0], menuOption[1], menuOption[2], menuOption[3]);
       event.setContactPhone(getPhone());
       event.setEventType(getType());
-      waitStaff = guests / 10 + 1;
+      waitStaff = (guests / 10) + 1;
       for(count = 0; count < waitStaff; ++count)
          emps[count] = getWaitstaff();
-      chefs = guests / 25 + 1;
-      for(; count < waitStaff + chefs; ++count)
+      chefs = (guests / 25) + 1;
+      for(count = waitStaff; count < chefs + waitStaff; ++count)
          emps[count] = getChef();
       emps[count] = getCoordinator();
       event.setEmps(emps);
@@ -111,7 +111,14 @@ public class StaffDinnerEvent
       final int MIN_GUESTS = 5;
       final int MAX_GUESTS = 100;
       Scanner input = new Scanner(System.in);
+     //try
+     //{
       System.out.print("Enter number of guests >> ");
+     //}
+     //catch(InputMismatchException error)
+       //{
+       //System.out.print("Please enter a number >> ");
+       //}
       guests = input.nextInt();
       while(guests < MIN_GUESTS || guests > MAX_GUESTS)
       {
